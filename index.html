@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>DAZA - Taller Mecánico</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DAZA">
+  <link rel="apple-touch-icon" href="icons/logo.jpg">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div id="app">
+    <!-- Navbar (Sidebar on Desktop, Bottom bar on Mobile) -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <img src="icons/logo.jpg" alt="DAZA Logo">
+        <span class="nav-brand-title">DAZA</span>
+      </div>
+      
+      <!-- Dashboard -->
+      <a href="#dashboard" class="nav-link active" id="nav-dashboard">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+        <span>Inicio</span>
+      </a>
+
+      <!-- Clients -->
+      <a href="#clients" class="nav-link" id="nav-clients">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A11.386 11.386 0 018.625 21c-2.24 0-4.32-.647-6.08-1.758V19.13c0-2.226 1.748-4.086 3.97-4.103a7.108 7.108 0 015.424 0c2.22 0 3.97 1.802 3.97 4.057v.058zM18 10.5h.008v.008H18V10.5zm-6 0h.008v.008H12V10.5zM9 10.5a3 3 0 11-6 0 3 3 0 016 0zm12 0a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Clientes</span>
+      </a>
+
+      <!-- Orders -->
+      <a href="#orders" class="nav-link" id="nav-orders">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.67 2.67 0 0021 17.25l-5.83-5.83m-3.75 3.75a3.75 3.75 0 11-5.3-5.3 3.75 3.75 0 015.3 5.3zm6-6a2.25 2.25 0 00-3.18-3.18L5.07 10.12a12.015 12.015 0 004.81 4.81l5.83-5.83z" />
+        </svg>
+        <span>Órdenes (OT)</span>
+      </a>
+
+      <!-- Inventory -->
+      <a href="#inventory" class="nav-link" id="nav-inventory">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" />
+        </svg>
+        <span>Inventario</span>
+      </a>
+    </nav>
+
+    <!-- Main Content Panel -->
+    <main class="main-content" id="view-container">
+      <!-- Vistas dinámicas se renderizan aquí -->
+    </main>
+  </div>
+
+  <!-- Contenedor de impresión oculto para exportar a PDF nativo -->
+  <div id="print-area" class="print-section">
+    <!-- Contenido dinámico del presupuesto/orden a imprimir -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/clients.js"></script>
+  <script src="js/views/orders.js"></script>
+  <script src="js/views/inventory.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

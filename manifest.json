@@ -1,0 +1,16 @@
+{
+  "short_name": "DAZA",
+  "name": "DAZA - Taller Mecánico",
+  "icons": [
+    {
+      "src": "icons/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#121214",
+  "theme_color": "#FF8C00",
+  "display": "standalone",
+  "orientation": "portrait"
+}
