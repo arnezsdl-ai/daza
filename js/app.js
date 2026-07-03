@@ -14,7 +14,7 @@ const App = {
       console.log('Database DazaDB initialized successfully.');
     } catch (err) {
       console.error('Failed to open database:', err);
-      alert('Error crítico: No se pudo abrir la base de datos local del navegador. Verifique los permisos de almacenamiento.');
+      alert('Error crítico: ' + (err.message || err.name || err) + '\nNo se pudo abrir la base de datos local del navegador. Verifique los permisos de almacenamiento.');
     }
 
     // 2. Register Service Worker for PWA Offline functionality
