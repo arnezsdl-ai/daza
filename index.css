@@ -85,6 +85,10 @@ body {
   z-index: 100;
 }
 
+.nav-brand {
+  display: none;
+}
+
 .nav-link {
   display: flex;
   flex-direction: column;
