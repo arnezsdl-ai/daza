@@ -256,4 +256,4 @@ class DazaDB {
 }
 
 // Export singleton instance
-const db = new MecaFlowDB();
+const db = new DazaDB();
